@@ -1,0 +1,381 @@
+BL51 BANKED LINKER/LOCATER V6.00                                                        05/20/2024  20:20:41  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.00, INVOKED BY:
+C:\KEIL\C51\BIN\BL51.EXE main.obj TO main
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  main.obj (MAIN)
+  C:\KEIL\C51\LIB\C51S.LIB (?C_STARTUP)
+
+
+LINK MAP OF MODULE:  main (MAIN)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            IDATA   0008H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+                    0003H     07FDH                  *** GAP ***
+            CODE    0800H     0055H     UNIT         ?PR?DENSITY?MAIN
+            CODE    0855H     0052H     UNIT         ?PR?MAIN?MAIN
+            CODE    08A7H     0036H     UNIT         ?PR?_DELAY?MAIN
+            CODE    08DDH     001EH     UNIT         ?PR?SOUTH?MAIN
+            CODE    08FBH     001DH     UNIT         ?PR?READY_EAST?MAIN
+            CODE    0918H     001DH     UNIT         ?PR?READY_WEST?MAIN
+            CODE    0935H     001DH     UNIT         ?PR?READY_SOUTH?MAIN
+            CODE    0952H     001DH     UNIT         ?PR?READY_NORTH?MAIN
+            CODE    096FH     0018H     UNIT         ?PR?NORTH?MAIN
+            CODE    0987H     0014H     UNIT         ?PR?EAST?MAIN
+            CODE    099BH     0014H     UNIT         ?PR?WEST?MAIN
+            CODE    09AFH     000CH     UNIT         ?C_C51STARTUP
+
+
+
+OVERLAY MAP OF MODULE:   main (MAIN)
+
+
+SEGMENT
+  +--> CALLED SEGMENT
+---------------------
+?C_C51STARTUP
+  +--> ?PR?MAIN?MAIN
+
+?PR?MAIN?MAIN
+  +--> ?PR?DENSITY?MAIN
+  +--> ?PR?_DELAY?MAIN
+  +--> ?PR?EAST?MAIN
+  +--> ?PR?SOUTH?MAIN
+  +--> ?PR?WEST?MAIN
+  +--> ?PR?NORTH?MAIN
+
+?PR?DENSITY?MAIN
+BL51 BANKED LINKER/LOCATER V6.00                                                      05/20/2024  20:20:41  PAGE 2
+
+
+  +--> ?PR?EAST?MAIN
+  +--> ?PR?WEST?MAIN
+  +--> ?PR?SOUTH?MAIN
+  +--> ?PR?NORTH?MAIN
+
+?PR?EAST?MAIN
+  +--> ?PR?_DELAY?MAIN
+  +--> ?PR?READY_EAST?MAIN
+
+?PR?READY_EAST?MAIN
+  +--> ?PR?_DELAY?MAIN
+
+?PR?WEST?MAIN
+  +--> ?PR?_DELAY?MAIN
+  +--> ?PR?READY_WEST?MAIN
+
+?PR?READY_WEST?MAIN
+  +--> ?PR?_DELAY?MAIN
+
+?PR?SOUTH?MAIN
+  +--> ?PR?_DELAY?MAIN
+  +--> ?PR?READY_SOUTH?MAIN
+
+?PR?READY_SOUTH?MAIN
+  +--> ?PR?_DELAY?MAIN
+
+?PR?NORTH?MAIN
+  +--> ?PR?_DELAY?MAIN
+  +--> ?PR?READY_NORTH?MAIN
+
+?PR?READY_NORTH?MAIN
+  +--> ?PR?_DELAY?MAIN
+
+
+
+SYMBOL TABLE OF MODULE:  main (MAIN)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        MAIN
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0090H         PUBLIC        P1
+  D:00A0H         PUBLIC        P2
+  D:00B0H         PUBLIC        P3
+  C:0800H         PUBLIC        density
+  C:0855H         PUBLIC        main
+  C:0952H         PUBLIC        ready_north
+  B:0090H.0       PUBLIC        e_b
+  C:08FBH         PUBLIC        ready_east
+  B:00A0H.2       PUBLIC        e_g
+  C:096FH         PUBLIC        north
+  C:0935H         PUBLIC        ready_south
+  C:0987H         PUBLIC        east
+  B:0090H.3       PUBLIC        n_b
+  B:00B0H.5       PUBLIC        n_g
+  B:0090H.1       PUBLIC        s_b
+BL51 BANKED LINKER/LOCATER V6.00                                                      05/20/2024  20:20:41  PAGE 3
+
+
+  C:08DDH         PUBLIC        south
+  B:00A0H.0       PUBLIC        e_r
+  B:0090H.2       PUBLIC        w_b
+  B:00A0H.5       PUBLIC        s_g
+  C:0918H         PUBLIC        ready_west
+  B:00B0H.2       PUBLIC        w_g
+  B:00A0H.1       PUBLIC        e_y
+  B:00B0H.3       PUBLIC        n_r
+  C:099BH         PUBLIC        west
+  B:00A0H.3       PUBLIC        s_r
+  B:00B0H.4       PUBLIC        n_y
+  B:00B0H.0       PUBLIC        w_r
+  B:00A0H.4       PUBLIC        s_y
+  B:00B0H.1       PUBLIC        w_y
+  C:08B7H         PUBLIC        _delay
+  -------         PROC          MAIN
+  C:0855H         LINE#         36
+  C:0855H         LINE#         37
+  C:0855H         LINE#         38
+  C:0855H         LINE#         39
+  C:0855H         LINE#         40
+  C:0858H         LINE#         41
+  C:085FH         LINE#         43
+  C:0862H         LINE#         44
+  C:0869H         LINE#         45
+  C:086CH         LINE#         46
+  C:0873H         LINE#         48
+  C:0876H         LINE#         49
+  C:087DH         LINE#         50
+  C:0880H         LINE#         51
+  C:0887H         LINE#         53
+  C:088AH         LINE#         54
+  C:0891H         LINE#         55
+  C:0894H         LINE#         56
+  C:089BH         LINE#         58
+  C:089EH         LINE#         59
+  C:08A5H         LINE#         61
+  -------         ENDPROC       MAIN
+  -------         PROC          DENSITY
+  C:0800H         LINE#         64
+  C:0800H         LINE#         65
+  C:0800H         LINE#         66
+  C:0814H         LINE#         67
+  C:0814H         LINE#         68
+  C:0817H         LINE#         69
+  C:0817H         LINE#         70
+  C:081AH         LINE#         71
+  C:081AH         LINE#         72
+  C:081DH         LINE#         73
+  C:081FH         LINE#         74
+  C:081FH         LINE#         75
+  C:0822H         LINE#         76
+  C:0822H         LINE#         77
+  C:0825H         LINE#         78
+  C:0825H         LINE#         79
+  C:0828H         LINE#         80
+  C:082AH         LINE#         81
+BL51 BANKED LINKER/LOCATER V6.00                                                      05/20/2024  20:20:41  PAGE 4
+
+
+  C:082AH         LINE#         82
+  C:082AH         LINE#         83
+  C:083EH         LINE#         84
+  C:083EH         LINE#         85
+  C:0841H         LINE#         86
+  C:0841H         LINE#         87
+  C:0844H         LINE#         88
+  C:0844H         LINE#         89
+  C:0847H         LINE#         90
+  C:0849H         LINE#         91
+  C:0849H         LINE#         92
+  C:084CH         LINE#         93
+  C:084CH         LINE#         94
+  C:084FH         LINE#         95
+  C:084FH         LINE#         96
+  C:0852H         LINE#         97
+  C:0854H         LINE#         98
+  C:0854H         LINE#         99
+  C:0854H         LINE#         101
+  -------         ENDPROC       DENSITY
+  -------         PROC          EAST
+  C:0987H         LINE#         103
+  C:0987H         LINE#         104
+  C:0987H         LINE#         105
+  C:0989H         LINE#         106
+  C:098BH         LINE#         107
+  C:098DH         LINE#         108
+  C:098FH         LINE#         109
+  C:0991H         LINE#         110
+  C:0993H         LINE#         111
+  C:0993H         LINE#         112
+  C:0993H         LINE#         113
+  C:0993H         LINE#         114
+  C:0993H         LINE#         115
+  C:0993H         LINE#         116
+  C:0993H         LINE#         117
+  C:0996H         LINE#         118
+  C:0998H         LINE#         119
+  -------         ENDPROC       EAST
+  -------         PROC          SOUTH
+  C:08DDH         LINE#         122
+  C:08DDH         LINE#         123
+  C:08DDH         LINE#         124
+  C:08DFH         LINE#         125
+  C:08E1H         LINE#         126
+  C:08E3H         LINE#         127
+  C:08E5H         LINE#         128
+  C:08E7H         LINE#         129
+  C:08E9H         LINE#         130
+  C:08EBH         LINE#         131
+  C:08EDH         LINE#         132
+  C:08EFH         LINE#         133
+  C:08F1H         LINE#         134
+  C:08F3H         LINE#         135
+  C:08F3H         LINE#         136
+  C:08F6H         LINE#         137
+  C:08F8H         LINE#         138
+BL51 BANKED LINKER/LOCATER V6.00                                                      05/20/2024  20:20:41  PAGE 5
+
+
+  -------         ENDPROC       SOUTH
+  -------         PROC          WEST
+  C:099BH         LINE#         141
+  C:099BH         LINE#         142
+  C:099BH         LINE#         143
+  C:099DH         LINE#         144
+  C:099FH         LINE#         145
+  C:09A1H         LINE#         146
+  C:09A3H         LINE#         147
+  C:09A5H         LINE#         148
+  C:09A7H         LINE#         149
+  C:09A7H         LINE#         150
+  C:09A7H         LINE#         151
+  C:09A7H         LINE#         152
+  C:09A7H         LINE#         153
+  C:09A7H         LINE#         154
+  C:09A7H         LINE#         155
+  C:09AAH         LINE#         156
+  C:09ACH         LINE#         157
+  -------         ENDPROC       WEST
+  -------         PROC          NORTH
+  C:096FH         LINE#         160
+  C:096FH         LINE#         161
+  C:096FH         LINE#         162
+  C:0971H         LINE#         163
+  C:0973H         LINE#         164
+  C:0975H         LINE#         165
+  C:0977H         LINE#         166
+  C:0979H         LINE#         167
+  C:097BH         LINE#         168
+  C:097DH         LINE#         169
+  C:097FH         LINE#         170
+  C:097FH         LINE#         171
+  C:097FH         LINE#         172
+  C:097FH         LINE#         173
+  C:097FH         LINE#         174
+  C:0982H         LINE#         175
+  C:0984H         LINE#         176
+  -------         ENDPROC       NORTH
+  C:08ABH         SYMBOL        L?0056
+  C:08B1H         SYMBOL        L?0057
+  -------         PROC          L?0055
+  -------         ENDPROC       L?0055
+  C:08ABH         SYMBOL        L?0056
+  C:08B1H         SYMBOL        L?0057
+  -------         PROC          _DELAY
+  D:0006H         SYMBOL        val
+  -------         DO            
+  D:0004H         SYMBOL        i
+  D:0002H         SYMBOL        j
+  -------         ENDDO         
+  C:08B7H         LINE#         179
+  C:08B7H         LINE#         180
+  C:08B7H         LINE#         182
+  C:08C7H         LINE#         183
+  C:08C7H         LINE#         184
+  C:08D5H         LINE#         185
+BL51 BANKED LINKER/LOCATER V6.00                                                      05/20/2024  20:20:41  PAGE 6
+
+
+  C:08DCH         LINE#         186
+  -------         ENDPROC       _DELAY
+  -------         PROC          READY_EAST
+  -------         DO            
+  D:0082H         SYMBOL        i
+  -------         ENDDO         
+  C:08FBH         LINE#         188
+  C:08FBH         LINE#         189
+  C:08FBH         LINE#         191
+  C:08FDH         LINE#         192
+  C:0900H         LINE#         193
+  C:0900H         LINE#         194
+  C:0902H         LINE#         195
+  C:0909H         LINE#         196
+  C:090BH         LINE#         197
+  C:090EH         LINE#         198
+  C:0917H         LINE#         199
+  -------         ENDPROC       READY_EAST
+  -------         PROC          READY_WEST
+  -------         DO            
+  D:0082H         SYMBOL        i
+  -------         ENDDO         
+  C:0918H         LINE#         201
+  C:0918H         LINE#         202
+  C:0918H         LINE#         204
+  C:091AH         LINE#         205
+  C:091DH         LINE#         206
+  C:091DH         LINE#         207
+  C:091FH         LINE#         208
+  C:0926H         LINE#         209
+  C:0928H         LINE#         210
+  C:092BH         LINE#         211
+  C:0934H         LINE#         212
+  -------         ENDPROC       READY_WEST
+  -------         PROC          READY_SOUTH
+  -------         DO            
+  D:0082H         SYMBOL        i
+  -------         ENDDO         
+  C:0935H         LINE#         214
+  C:0935H         LINE#         215
+  C:0935H         LINE#         217
+  C:0937H         LINE#         218
+  C:093AH         LINE#         219
+  C:093AH         LINE#         220
+  C:093CH         LINE#         221
+  C:0943H         LINE#         222
+  C:0945H         LINE#         223
+  C:0948H         LINE#         224
+  C:0951H         LINE#         225
+  -------         ENDPROC       READY_SOUTH
+  -------         PROC          READY_NORTH
+  -------         DO            
+  D:0082H         SYMBOL        i
+  -------         ENDDO         
+  C:0952H         LINE#         227
+  C:0952H         LINE#         228
+  C:0952H         LINE#         230
+BL51 BANKED LINKER/LOCATER V6.00                                                      05/20/2024  20:20:41  PAGE 7
+
+
+  C:0954H         LINE#         231
+  C:0957H         LINE#         232
+  C:0957H         LINE#         233
+  C:0959H         LINE#         234
+  C:0960H         LINE#         235
+  C:0962H         LINE#         236
+  C:0965H         LINE#         237
+  C:096EH         LINE#         238
+  -------         ENDPROC       READY_NORTH
+  -------         ENDMOD        MAIN
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 01AFH BYTE (21%) *
+******************************************************************************
+
+Program Size: data=9.0 xdata=0 code=446
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)
