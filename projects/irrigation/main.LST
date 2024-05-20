@@ -1,0 +1,49 @@
+C51 COMPILER V8.02   MAIN                                                                  05/20/2024 22:29:05 PAGE 1   
+
+
+C51 COMPILER V8.02, COMPILATION OF MODULE MAIN
+OBJECT MODULE PLACED IN main.OBJ
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE main.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          #include <reg51.h>
+   2          
+   3          sbit moistureSensor = P1^0; // Soil moisture sensor connected to P1.0
+   4          sbit waterPump = P1^1;     // Water pump connected to P1.1
+   5          
+   6          void delay(unsigned int ms) {
+   7   1          unsigned int i, j;
+   8   1          for (i = 0; i < ms; i++)
+   9   1              for (j = 0; j < 1275; j++);
+  10   1      }
+  11          
+  12          void main() {
+  13   1          moistureSensor = 1; // Set as input
+  14   1          waterPump = 0;     // Initialize pump off
+  15   1      
+  16   1          while (1) {
+  17   2              if (moistureSensor) {
+  18   3                  // Soil is dry (high resistance)
+  19   3                  waterPump = 1; // Turn on water pump
+  20   3              } else {
+  21   3                  // Soil is wet (low resistance)
+  22   3                  waterPump = 0; // Turn off water pump
+  23   3              }
+  24   2              delay(1000); // Delay for 1 second
+  25   2          }
+  26   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     54    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)
